@@ -17,14 +17,14 @@ public interface MenuMapper {
 
 	void deleteMenu(MenuVo menuVo);
 
-	void insertMenuByName(MenuVo menuVo);
+	void insertMenuByName(MenuVo menuVo); 
  
 	
 
 	MenuVo getMenu(String menu_id);
 
 	void updateMenu(MenuVo menuVo);
-
+ 
 	
 	
 }
