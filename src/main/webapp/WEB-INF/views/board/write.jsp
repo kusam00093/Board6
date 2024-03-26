@@ -44,7 +44,7 @@ input[readonly]{
   <main>
  
     <h2>게시글 등록</h2>
-    <form action="/Board/Write" method = "post">
+    <form action="/Board/Write?menu_id=${menu_id}" method = "post">
       <table>
       	<tr>
       	  <td>제목</td>
