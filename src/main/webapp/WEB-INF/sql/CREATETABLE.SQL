@@ -20,3 +20,19 @@ COMMIT;
      ,UPOINT      NUMBER(10,0)   DEFAULT 0
      ,INDATE      DATE           DEFAULT SYSDATE
      )
+     
+     
+ -- 멀티 게시판 --
+ DROP TABLE BOARD
+ CREATE TABLE BOARD(
+ 	BNO       NUMBER(8,0)          PRIMARY KEY
+ 	,MENU_ID  VARCHAR2(6)      
+ 	    REFERENCES MENUS(MENU_ID)    
+ 	,TITLE    VARCHAR2(240)        NOT NULL
+ 	,CONTENT  VARCHAR2(4000)   
+ 	,WRITER   VARCHAR2(12)
+ 	,REGDATE  DATE                 DEFAULT SYSDATE
+ 	HIT       NUMBER(9,0)          DEFAULT 0
+ 	
+ 
+ )    
