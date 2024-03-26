@@ -11,17 +11,45 @@
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <script src="https://cdn.jsdelivr.net/npm/browser-scss@1.0.3/dist/browser-scss.min.js"></script>
 <style>
+
+
+
+
+
+#mainboard{
   td{
   	padding : 10px;
-  	width  : 150px;
   	text-align : center;
   }
   
+  td:nth-of-type(1){
+  	width : 80px;
+  }
+  
+  td:nth-of-type(2){
+  	width : 400px;
+  	text-align : left;
+  }
+  
+  td:nth-of-type(3){
+  	width : 100px;
+  }
+  
+  td:nth-of-type(4){
+  	width : 140px;
+  }
+  
+  td:nth-of-type(5){
+  	width : 80px;
+  }
+  
+
   tr:first-child{
    	background-color: black;
    	color : white;
    	font-weight : bolder;
    	td{
+	  	text-align : center;
    		border-color : violet;   	
    	 }   	
   }
@@ -33,12 +61,15 @@
   tr:nth-child(2)> td{
   	text-align : right;
   }
+  }
 </style>
 </head>
 <body>
   <main>
+    <%@include file="/WEB-INF/include/menus.jsp" %>
+    
     <h2>게시물 목록</h2>
-    <table>
+    <table id="mainboard">
       <tr>
 	    <td>번호</td>	     
 	    <td>제목</td>	     

@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.board.domain.BoardVo;
 import com.board.mapper.BoardMapper;
 import com.board.menus.domain.MenuVo;
+import com.board.menus.mapper.MenuMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,15 +21,24 @@ public class BoardController {
 	
 	@Autowired
 	private BoardMapper boardMapper;
+	@Autowired
+	private MenuMapper menuMapper;
 	
 	@RequestMapping("/List")
 	public ModelAndView list(MenuVo menuVo) {
+		
+		// 메뉴목록
+		List<MenuVo> menuList = menuMapper.getMenuList();
+		
+		
 		
 		// 게시물 목록
 		List<BoardVo> boardList = boardMapper.getBoardList(menuVo);  
 		System.out.println(boardList);
 		ModelAndView mv = new ModelAndView();
+		
 		mv.addObject("boardList",boardList);
+		mv.addObject("menuList",menuList);
 		mv.setViewName("board/list");
 		return mv;
 	}
