@@ -34,7 +34,7 @@ public class BoardController {
 		
 		// 게시물 목록
 		List<BoardVo> boardList = boardMapper.getBoardList(menuVo);  
-		System.out.println(boardList);
+		//System.out.println(boardList);
 		ModelAndView mv = new ModelAndView();
 		
 		mv.addObject("boardList",boardList);

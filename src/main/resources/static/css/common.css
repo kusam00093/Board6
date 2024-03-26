@@ -52,6 +52,13 @@ h2{
 		color: black;
 		background-color: GRAY;
 		}
+	a{
+
+		display: block;
+		width : 100%;
+		text-decoration : none;
+		
+	}	
 }}
 
 

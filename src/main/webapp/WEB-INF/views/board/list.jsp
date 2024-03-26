@@ -85,7 +85,7 @@
      <c:forEach  var="board" items="${ boardList }">
       <tr>
 	    <td>${board.bno}</td>	     
-	    <td><a href="/Board/View?title=${board.title}">${board.title}</a></td>	     
+	    <td><a href="/Board/View?bno=${board.bno}">${board.title}</a></td>	     
 	    <td>${board.writer}</td>	     
 	    <td>${board.regdate}</td>	     
 	    <td>${board.hit}</td>	     
