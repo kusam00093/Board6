@@ -79,7 +79,7 @@
       </tr>
       <tr>
       <td colspan = "5">
-		 [<a href = "/Menus/WriteForm">새 글추가</a>    ]&nbsp;&nbsp;&nbsp;  
+		 [<a href = "/Board/WriteForm">새 글추가</a>    ]&nbsp;&nbsp;&nbsp;  
       </td>
       </tr>
      <c:forEach  var="board" items="${ boardList }">

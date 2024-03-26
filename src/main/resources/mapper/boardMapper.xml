@@ -8,8 +8,28 @@
          ,TO_CHAR(REGDATE,'YYYY-MM-DD') REGDATE
          ,HIT
    FROM  BOARD
-   WHERE MENU_ID = #{menu_id}
+   
    ORDER BY BNO ASC      
   
   </select>
+  
+  <insert id="insertBoard">
+  	INSERT INTO BOARD(
+  	BNO,
+  	TITLE,
+  	WRITER,
+  	CONTENT
+  	)
+  	VALUES(
+  	(SELECT NVL(MAX(BNO),0)+1 FROM BOARD),
+  	#{title},
+  	#{writer},
+  	#{content}
+  	
+  	
+  	)
+  	
+  	
+  
+  </insert>
 </mapper>  	
