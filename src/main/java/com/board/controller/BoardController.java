@@ -97,6 +97,10 @@ public class BoardController {
 		//메뉴 목록 조회
 		List<MenuVo> menuList = menuMapper.getMenuList();
 		
+		// 조회수 증가 (현재 bno 의 hit = hit +1)
+		
+		boardMapper.incHit(boardVo);
+		
 		// bno로 조회한 게시글 정보
 		BoardVo vo = boardMapper.getView(boardVo);
  		ModelAndView mv = new ModelAndView();

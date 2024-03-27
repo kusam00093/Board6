@@ -7,9 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>List</title>
-<link rel = "stylesheet" href="/css/common.css">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <script src="https://cdn.jsdelivr.net/npm/browser-scss@1.0.3/dist/browser-scss.min.js"></script>
+<link rel = "stylesheet" href="/css/common.css">
 <style>
 
 
@@ -63,6 +63,8 @@
   }
   }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/browser-scss@1.0.3/dist/browser-scss.min.js"></script>
 </head>
 <body>
   <main>

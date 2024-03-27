@@ -28,6 +28,8 @@ public interface BoardMapper {
 
 	void deleteBoard(BoardVo boardVo);
 
+	void incHit(BoardVo boardVo);
+
 
 
 }

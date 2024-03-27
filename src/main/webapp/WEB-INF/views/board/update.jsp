@@ -54,7 +54,7 @@ input[readonly]{
       	</tr>
       	<tr>
       	  <td>제목</td>
-      	  <td><input type="password" name ="title" value="${bo.title}"></td>
+      	  <td><input type="text" name ="title" value="${bo.title}"></td>
       	</tr>
       	<tr>
       	  <td>글쓴이</td>
