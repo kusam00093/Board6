@@ -28,7 +28,7 @@
          ,TITLE
          ,CONTENT
          ,WRITER
-         ,TO_CHAR(REGDATE,'YYYY-MM-DD') REGDATE
+         ,TO_CHAR(REGDATE,'YYYY-MM-DD hh24:mm:ss') REGDATE
          ,HIT
    FROM  BOARD
    WHERE BNO = #{bno}	  
@@ -64,4 +64,12 @@
   
   
   </update>
+  
+  <delete id="deleteBoard">
+  DELETE BOARD
+  WHERE  BNO = #{bno}
+  </delete>
+  
+  
+  
 </mapper>  	

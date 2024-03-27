@@ -81,7 +81,7 @@ textarea{
 	<script>
 	  const goListEl = document.getElementById('goList');
 	  goListEl.addEventListener('click',function(e){
-		  location.href = '/Board/List?menu_id==MENU01';
+		  location.href = '/Board/List?menu_id=MENU01';
 	  })
 	</script>
 </body>

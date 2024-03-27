@@ -112,16 +112,26 @@ public class BoardController {
 		BoardVo vo = boardMapper.getView(boardVo);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("bo",vo);
-		mv.setViewName("/board/update?bno="+boardVo.getBno());
+		mv.setViewName("/board/update");
 		return mv;
 	}
 	
 	@RequestMapping("/Update")
 	public ModelAndView update(BoardVo boardVo) {
-		
+		int bno = boardVo.getBno();
 		boardMapper.getUpdate(boardVo);
 		ModelAndView mv = new ModelAndView();
-		//mv.setViewName("/board/view?bno="+boardVo.getBno());
+		mv.setViewName("redirect:/Board/View?bno="+bno);
+		return mv;
+	}
+	
+	@RequestMapping("/Delete")
+	public ModelAndView delete(BoardVo boardVo) {
+		//boardMapper.deleteBoard(boardVo);
+		String menu_id = boardVo.getMenu_id();
+		ModelAndView mv = new ModelAndView();
+		System.out.println(menu_id);
+		mv.setViewName("redirect:/Board/List?menu_id=" + menu_id);
 		return mv;
 	}
 	

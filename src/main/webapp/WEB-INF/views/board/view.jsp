@@ -87,7 +87,7 @@ input[readonly]{
       	  <a class="btn btn-primary" role="button" 
       	  href="/Board/Delete?bno=${bo.bno}" >게시물 삭제</a>
       	  <a class="btn btn-primary" role="button" 
-      	  href="/Board/List?menu_id=${bo.menu_id}" >회원목록</a>
+      	  href="/Board/List?menu_id=${bo.menu_id}" >게시글 목록</a>
       	  <a class="btn btn-primary" role="button" 
       	  href="/" >HOME</a>
 
