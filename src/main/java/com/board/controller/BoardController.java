@@ -105,6 +105,10 @@ public class BoardController {
 		BoardVo vo = boardMapper.getView(boardVo);
 		
 		// vo.content 안의 \n을 '<br>'로 변경한다
+		String content  = vo.getContent();  
+		       content  = content.replace("\n", "<br>");		
+		vo.setContent( content  );
+		
  		ModelAndView mv = new ModelAndView();
 		mv.addObject("bo",vo);
 		mv.addObject("menuList",menuList);
