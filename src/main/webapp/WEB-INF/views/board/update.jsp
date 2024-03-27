@@ -23,9 +23,10 @@ td:not([colspan]):first-child{
 	color : white;
 	font-weight : bolder;
 }
-
-td{
+#maintable td{
 	padding : 10px;
+}
+td{
 	width : 800px;
 }
 td:nth-of-type(1){
@@ -41,9 +42,10 @@ input[readonly]{
 </head>  
 <body>
   <main>
+   <%@include file="/WEB-INF/include/menus.jsp" %>
     <h2>게시물 수정</h2>
     <form action="/Board/Update" method = "post">
-      <table>
+      <table id="maintable">
       	<tr>
       	  <td>번호</td>
       	  <td><input type="text" name ="bno" value="${bo.bno}" readonly></td>

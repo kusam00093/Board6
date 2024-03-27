@@ -105,9 +105,12 @@ public class BoardController {
 		BoardVo vo = boardMapper.getView(boardVo);
 		
 		// vo.content 안의 \n을 '<br>'로 변경한다
+		
 		String content  = vo.getContent();  
+		if(content != null){
 		       content  = content.replace("\n", "<br>");		
 		vo.setContent( content  );
+		}
 		
  		ModelAndView mv = new ModelAndView();
 		mv.addObject("bo",vo);
@@ -119,9 +122,11 @@ public class BoardController {
 
 	@RequestMapping("/UpdateForm")
 	public ModelAndView updateForm(BoardVo boardVo) {
+		List<MenuVo> menuList = menuMapper.getMenuList();
 		BoardVo vo = boardMapper.getView(boardVo);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("bo",vo);
+		mv.addObject("menuList",menuList);
 		mv.setViewName("/board/update");
 		return mv;
 	}

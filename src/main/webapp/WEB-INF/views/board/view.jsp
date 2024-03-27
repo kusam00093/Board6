@@ -38,6 +38,9 @@
            text-align : left;
            vertical-align: baseline; 
     	}
+    tr:nth-of-type(3) td:nth-of-type(2){
+    		text-align: right;
+    }	
     tr:last-child td {
            background-color : white;
            color            : black;   

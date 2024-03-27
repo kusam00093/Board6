@@ -25,8 +25,10 @@ td:not([colspan]):first-child{
 }
 
 td{
-	padding : 10px;
 	width : 800px;
+}
+#maintable td{
+	padding : 10px;
 }
 td:nth-of-type(1){
 	width : 200px;
