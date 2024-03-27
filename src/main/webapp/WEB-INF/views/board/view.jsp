@@ -67,7 +67,7 @@ input[readonly]{
       	</tr>
       	<tr>
       	  <td>내용</td>
-      	  <td>${ bo.content }</td>
+      	  <td colspan = "3">${ bo.content }</td>
       	</tr>
       	<tr>
       	  <td>등록일</td>
@@ -77,22 +77,21 @@ input[readonly]{
       	  <td>조회수</td>
       	  <td>${ bo.hit }</td>
       	</tr>
-      	
       	<tr>
-      	  <td colspan = "2">
-      	  <a class="btn btn-primary" role="button" 
-      	  href="/Board/WriteForm?menu_id=${bo.menu_id }" >게시물 등록</a>
-      	  <a class="btn btn-primary" role="button" 
-      	  href="/Board/UpdateForm?bno=${bo.bno}" >게시물 수정</a>
-      	  <a class="btn btn-primary" role="button" 
-      	  href="/Board/Delete?bno=${bo.bno}" >게시물 삭제</a>
-      	  <a class="btn btn-primary" role="button" 
-      	  href="/Board/List?menu_id=${bo.menu_id}" >게시글 목록</a>
-      	  <a class="btn btn-primary" role="button" 
-      	  href="/" >HOME</a>
-
+      	  <td colspan="4"><a class="btn btn-info btn-sm" href="/Board/WriteForm?menu_id=${bo.menu_id}">새 글쓰기</a>&nbsp;&nbsp;
+      	  </td>
+      	  <td colspan="4"><a class="btn btn-warning btn-sm" href="/Board/UpdateForm?bno=${bo.bno}&menu_id=${bo.menu_id}">글 수정</a>&nbsp;&nbsp;
+      	  </td>
+      	  <td colspan="4"><a class="btn btn-danger btn-sm" href="/Board/Delete?bno=${bo.bno}&menu_id=${menu_id}">글 삭제</a>&nbsp;&nbsp;
+      	  </td>
+      	  <td colspan="4"><a class="btn btn-primary btn-sm" href="/Board/List?menu_id=${bo.menu_id}">글 목록</a>&nbsp;&nbsp;
+      	  </td>
+      	  <td colspan="4"><a class="btn btn-link btn-sm" href="javascript:history.back()">이전으로</a>&nbsp;&nbsp;
+      	  </td>
+      	  <td colspan="4"><a class="btn btn-success btn-sm" href="/">HOME</a>&nbsp;&nbsp;
       	  </td>
       	</tr>
+
       
       
       

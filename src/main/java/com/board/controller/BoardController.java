@@ -128,8 +128,8 @@ public class BoardController {
 	@RequestMapping("/Delete")
 	public ModelAndView delete(BoardVo boardVo) {
 		//boardMapper.deleteBoard(boardVo);
-		String menu_id = boardVo.getMenu_id();
 		ModelAndView mv = new ModelAndView();
+		String menu_id = boardVo.getMenu_id();
 		System.out.println(menu_id);
 		mv.setViewName("redirect:/Board/List?menu_id=" + menu_id);
 		return mv;
