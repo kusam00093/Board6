@@ -9,7 +9,7 @@
          ,HIT
    FROM  BOARD
    WHERE MENU_ID = #{menu_id}
-   ORDER BY BNO ASC      
+   ORDER BY BNO DESC      
   
   </select>
   
