@@ -103,6 +103,8 @@ public class BoardController {
 		
 		// bno로 조회한 게시글 정보
 		BoardVo vo = boardMapper.getView(boardVo);
+		
+		// vo.content 안의 \n을 '<br>'로 변경한다
  		ModelAndView mv = new ModelAndView();
 		mv.addObject("bo",vo);
 		mv.addObject("menuList",menuList);

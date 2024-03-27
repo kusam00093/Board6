@@ -34,7 +34,9 @@
      		}
     tr:nth-of-type(4) td[colspan] {
            height : 250px;
-           width  : 600px;   
+           width  : 600px;  
+           text-align : left;
+           vertical-align: baseline; 
     	}
     tr:last-child td {
            background-color : white;
@@ -42,11 +44,6 @@
     	}
    }
    
-      
-   textarea  {
-      height: 250px;
-      width : 100%;
-   }
 
 
 </style>

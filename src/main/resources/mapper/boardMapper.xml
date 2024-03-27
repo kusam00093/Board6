@@ -53,6 +53,14 @@
 
   </insert>
   
+  <update id="incHit">
+  UPDATE BOARD
+  SET    HIT = HIT+1
+  WHERE  BNO = #{bno}
+  </update>
+  
+  
+  
   <update id="getUpdate">
   UPDATE BOARD
   SET    MENU_ID = #{menu_id},
