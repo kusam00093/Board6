@@ -1,5 +1,6 @@
 package com.board.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,6 +66,15 @@ public class BoardController {
 		return mv;
 	}
 	
-	
+	@RequestMapping("/View")
+	public ModelAndView view(BoardVo boardVo) {
+		HashMap<String, Object> map = boardMapper.getBoard(boardVo);
+		//String menu_id = boardVo.getMenu_id();
+		ModelAndView mv = new ModelAndView(); 
+		//mv.addObject("bo",menu_id);
+		mv.addObject("bo",map);
+		mv.setViewName("/board/view");
+		return mv;
+	}
 	
 }

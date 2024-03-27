@@ -12,7 +12,29 @@
    ORDER BY BNO DESC      
   
   </select>
+  	<resultMap type="java.util.HashMap" id="getBoardMap">
+	<result property="bno"       column="bno"/>
+	<result property="menu_id"   column="menu_id"/>
+	<result property="title"     column="title"/>
+	<result property="content"   column="content"/>
+	<result property="writer"    column="writer"/>
+	<result property="regdate"   column="regdate"/>
+	<result property="hit"       column="hit"/>
+	</resultMap>
   
+  <select id="getBoard" resultMap = "getBoardMap">
+  SELECT BNO
+  		 ,MENU_ID
+         ,TITLE
+         ,CONTENT
+         ,WRITER
+         ,TO_CHAR(REGDATE,'YYYY-MM-DD') REGDATE
+         ,HIT
+   FROM  BOARD
+   WHERE BNO = #{bno}	  
+  
+  
+  </select>
   <insert id="insertBoard">
   	INSERT INTO BOARD(
   	BNO,
