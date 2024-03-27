@@ -17,6 +17,15 @@ public interface BoardMapper {
 
 	HashMap<String, Object> getBoard(BoardVo boardVo);
 
+	//void getBoList(BoardVo boardVo);
+
+
+	List<BoardVo> getBoList(BoardVo boardVo);
+
+	BoardVo getView(BoardVo boardVo);
+
+	void getUpdate(BoardVo boardVo);
+
 
 
 }

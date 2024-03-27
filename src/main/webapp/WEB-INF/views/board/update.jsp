@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <link rel="stylesheet" href="/css/common.css">
-<title>Write</title>
+<title>Update</title>
 <style>
 input:not(input[type=submit]){
 	width : 100%;
@@ -37,42 +37,46 @@ input[readonly]{
 	background: #ddd;
 	
 }
-
-textarea{
-	height : 300px;
-	width  : 100%;
-
-}
 </style>
 </head>  
 <body>
   <main>
-  <%@include file="/WEB-INF/include/menus.jsp" %>
- 
-    <h2>게시글 등록</h2>
-    <form action="/Board/Write?menu_id=${menu_id}" method = "post">
+    <h2>게시물 수정</h2>
+    <form action="/Board/Update" method = "post">
       <table>
       	<tr>
-      	  <td>제목</td>
-      	  <td><input type="text" name ="title"></td>
+      	  <td>번호</td>
+      	  <td><input type="text" name ="bno" value="${bo.bno}" readonly></td>
       	</tr>
       	<tr>
-      	  <td>작성자</td> 
-      	  <td><input type="text" name ="writer"></td>
+      	  <td>메뉴</td>
+      	  <td><input type="text" name ="menu_id" value="${bo.menu_id}" ></td>
+      	</tr>
+      	<tr>
+      	  <td>제목</td>
+      	  <td><input type="password" name ="title" value="${bo.title}"></td>
+      	</tr>
+      	<tr>
+      	  <td>글쓴이</td>
+      	  <td><input type="text" name ="writer" value="${bo.writer}"></td>
       	</tr>
       	<tr>
       	  <td>내용</td>
-      	  <td><textarea name="content"></textarea></td>
+      	  <td><input type="text" name ="content" value="${bo.content}"></td>
+      	</tr>
+      	<tr>
+      	  <td>등록일</td>
+      	  <td><input type="text"   value="${bo.regdate}" readonly ></td>
       	</tr>
 
       	<tr>
       	  <td colspan = "2">
-      	  <input type ="submit" value = "글 쓰기">
+      	  <input type ="submit" value = "수정">
       	  <input type ="button" value = "목록" id= "goList">
       	  </td>
       	</tr>
       
-      
+       
       
       </table>
                 
@@ -81,7 +85,7 @@ textarea{
 	<script>
 	  const goListEl = document.getElementById('goList');
 	  goListEl.addEventListener('click',function(e){
-		  location.href = '/Board/List?menu_id==MENU01';
+		  location.href = '/';
 	  })
 	</script>
 </body>

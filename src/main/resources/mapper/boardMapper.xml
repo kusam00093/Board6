@@ -12,7 +12,7 @@
    ORDER BY BNO DESC      
   
   </select>
-  	<resultMap type="java.util.HashMap" id="getBoardMap">
+<!--   	<resultMap type="java.util.HashMap" id="getBoardMap">
 	<result property="bno"       column="bno"/>
 	<result property="menu_id"   column="menu_id"/>
 	<result property="title"     column="title"/>
@@ -20,9 +20,9 @@
 	<result property="writer"    column="writer"/>
 	<result property="regdate"   column="regdate"/>
 	<result property="hit"       column="hit"/>
-	</resultMap>
+	</resultMap> -->
   
-  <select id="getBoard" resultMap = "getBoardMap">
+  <select id="getView" resultType = "com.board.domain.BoardVo">
   SELECT BNO
   		 ,MENU_ID
          ,TITLE
@@ -48,12 +48,20 @@
   	#{menu_id},
   	#{title},
   	#{writer},
-  	#{content}
-  	
-  	
+  	#{content}  	
   	)
-  	
-  	
-  
+
   </insert>
+  
+  <update id="getUpdate">
+  UPDATE BOARD
+  SET    MENU_ID = #{menu_id},
+  		 TITLE   = #{title},
+  		 WRITER  = #{writer},
+  		 CONTENT = #{content}
+  WHERE  BNO     = #{bno}		 
+         
+  
+  
+  </update>
 </mapper>  	

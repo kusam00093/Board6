@@ -48,9 +48,16 @@ public class BoardController {
 	
 	@RequestMapping("/WriteForm")
 	public ModelAndView writeForm(MenuVo menuVo) {
+		
+		// 메뉴 목록 조회
+		List<MenuVo> menuList = menuMapper.getMenuList();
+		System.out.println("[==MenuList==]"+menuList);
+		
+		// ?menu_id=MENU01 넘어온 menu_id 를 처리
 		String menu_id = menuVo.getMenu_id();
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("menu_id",menu_id);
+		mv.addObject("menuList",menuList);
 		mv.setViewName("/board/write");
 		return mv;
 	}
@@ -58,14 +65,14 @@ public class BoardController {
 	@RequestMapping("/Write")
 	public ModelAndView write(BoardVo boardVo) {
 		boardMapper.insertBoard(boardVo);
-		
-		
+
 		String menu_id = boardVo.getMenu_id();
 		ModelAndView mv = new ModelAndView(); 
+		
 		mv.setViewName("redirect:/Board/List?menu_id=" + menu_id);
 		return mv;
 	}
-	
+	/*
 	@RequestMapping("/View")
 	public ModelAndView view(BoardVo boardVo) {
 		HashMap<String, Object> map = boardMapper.getBoard(boardVo);
@@ -74,6 +81,47 @@ public class BoardController {
 		//mv.addObject("bo",menu_id);
 		mv.addObject("bo",map);
 		mv.setViewName("/board/view");
+		return mv;
+	}*/
+//	@RequestMapping("/View")
+//	public ModelAndView view(BoardVo boardVo) {
+//		List<BoardVo> boList = boardMapper.getBoList(boardVo);  
+//		ModelAndView mv = new ModelAndView(); 
+//		mv.addObject("bo",boList.get(0));
+//		mv.setViewName("/board/view");
+//		return mv;
+//	}
+	@RequestMapping("/View")
+	public ModelAndView view(BoardVo boardVo) {
+		
+		//메뉴 목록 조회
+		List<MenuVo> menuList = menuMapper.getMenuList();
+		
+		// bno로 조회한 게시글 정보
+		BoardVo vo = boardMapper.getView(boardVo);
+ 		ModelAndView mv = new ModelAndView();
+		mv.addObject("bo",vo);
+		mv.addObject("menuList",menuList);
+		mv.setViewName("/board/view");
+		return mv;
+	}
+	
+
+	@RequestMapping("/UpdateForm")
+	public ModelAndView updateForm(BoardVo boardVo) {
+		BoardVo vo = boardMapper.getView(boardVo);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("bo",vo);
+		mv.setViewName("/board/update?bno="+boardVo.getBno());
+		return mv;
+	}
+	
+	@RequestMapping("/Update")
+	public ModelAndView update(BoardVo boardVo) {
+		
+		boardMapper.getUpdate(boardVo);
+		ModelAndView mv = new ModelAndView();
+		//mv.setViewName("/board/view?bno="+boardVo.getBno());
 		return mv;
 	}
 	

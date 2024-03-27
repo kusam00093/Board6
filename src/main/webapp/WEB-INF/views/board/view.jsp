@@ -46,6 +46,7 @@ input[readonly]{
 </head>  
 <body>
   <main>
+     <%@include file="/WEB-INF/include/menus.jsp" %>
     <h2>게시물 상세정보</h2>
       <table>
       	<tr>
