@@ -16,12 +16,14 @@
   <insert id="insertBoard">
   	INSERT INTO BOARD(
   	BNO,
+  	MENU_ID,
   	TITLE,
   	WRITER,
   	CONTENT
   	)
   	VALUES(
   	(SELECT NVL(MAX(BNO),0)+1 FROM BOARD),
+  	#{menu_id},
   	#{title},
   	#{writer},
   	#{content}
