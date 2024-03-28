@@ -88,7 +88,9 @@
     </tr>
     <tr>
       <td>작성자</td>
-      <td>${ bo.writer }</td>
+      <td>
+      <input type="text" name="writer" value="${bo.writer }">
+      </td>
       <td>작성일</td>
       <td>${ bo.regdate }</td>
     </tr>

@@ -65,6 +65,7 @@
   UPDATE BOARD
   SET    
   		 TITLE   = #{title},
+  		 WRITER  = #{writer}
   		 CONTENT = #{content}
   WHERE  BNO     = #{bno}		 
          

@@ -142,8 +142,10 @@ public class BoardController {
 	@RequestMapping("/UpdateForm")
 	public ModelAndView updateForm(BoardVo boardVo) {
 		BoardVo vo = boardMapper.getBoard(boardVo);
+		List<MenuVo> menuList = menuMapper.getMenuList();
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("bo",vo);
+		mv.addObject("menuList",menuList);
 		mv.setViewName("board/update");
 		return mv;
 	}
