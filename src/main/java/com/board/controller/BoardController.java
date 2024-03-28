@@ -148,7 +148,7 @@ public class BoardController {
 		mv.addObject("menuList",menuList);
 		mv.setViewName("board/update");
 		return mv;
-	}
+	} 
 	
 	@RequestMapping("/Update")
 	public ModelAndView update(BoardVo boardVo) {
