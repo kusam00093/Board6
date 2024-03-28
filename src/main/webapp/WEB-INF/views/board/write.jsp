@@ -13,6 +13,7 @@ input:not(input[type=submit]){
 }
 input[type="submit"]{
 	width : 100px;
+	
 }
 #goList {
 	width : 100px;
@@ -52,12 +53,14 @@ textarea{
   <%@include file="/WEB-INF/include/menus.jsp" %>
  
     <h2>게시글 등록</h2>
-    <form action="/Board/Write?menu_id=${menu_id}" method = "post">
+    <form action="/Board/Write" method = "post">
+    <input type="hidden" name ="menu_id" value="${ menu_id }"/>
       <table>
       	<tr>
       	  <td>제목</td>
       	  <td><input type="text" name ="title"></td>
       	</tr>
+
       	<tr>
       	  <td>작성자</td> 
       	  <td><input type="text" name ="writer"></td>
