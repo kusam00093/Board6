@@ -17,7 +17,9 @@ input[type="submit"]{
 #goList {
 	width : 100px;
 }
-
+#maintable{
+	width : 80%;
+}
 td:not([colspan]):first-child{
 	background-color: black;
 	color : white;

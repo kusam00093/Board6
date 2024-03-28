@@ -1,6 +1,5 @@
 package com.board.controller;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +29,9 @@ public class BoardController {
 	public ModelAndView list(MenuVo menuVo) {
 		
 		log.info("=====================================menuVo : {}",menuVo);
+		
+		
+		
 		// 메뉴목록
 		List<MenuVo> menuList = menuMapper.getMenuList();
 		
@@ -38,8 +40,14 @@ public class BoardController {
 		List<BoardVo> boardList = boardMapper.getBoardList(menuVo);  
 		//System.out.println(boardList);
 		ModelAndView mv = new ModelAndView();
-		//String menu_id = menuVo.getMenu_id();
-		//mv.addObject("menu_id",menu_id);
+		
+		MenuVo mVo = menuMapper.getMenu(menuVo.getMenu_id());		
+		String menu_id = mVo.getMenu_id();
+		String menu_name = mVo.getMenu_name();
+		
+		mv.addObject("menu_id",menu_id);
+		mv.addObject("menu_name",menu_name);
+		
 		mv.addObject("boardList",boardList);
 		mv.addObject("menuList",menuList);
 		mv.setViewName("board/list");
@@ -149,5 +157,6 @@ public class BoardController {
 		mv.setViewName("redirect:/Board/List?menu_id=" + menu_id);
 		return mv;
 	}
+	
 	
 }
