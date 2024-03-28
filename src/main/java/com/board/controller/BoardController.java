@@ -110,7 +110,7 @@ public class BoardController {
 		boardMapper.incHit(boardVo);
 		
 		// bno로 조회한 게시글 정보
-		BoardVo vo = boardMapper.getView(boardVo);
+		BoardVo vo = boardMapper.getBoard(boardVo);
 		
 		// vo.content 안의 \n을 '<br>'로 변경한다
 		
@@ -127,23 +127,24 @@ public class BoardController {
 		return mv;
 	}
 	
-
-//	@RequestMapping("/UpdateForm")
-//	public ModelAndView updateForm(BoardVo boardVo) {
-//		List<MenuVo> menuList = menuMapper.getMenuList();
-//		BoardVo vo = boardMapper.getView(boardVo);
-//		ModelAndView mv = new ModelAndView();
-//		mv.addObject("bo",vo);
-//		mv.addObject("menuList",menuList);
-//		mv.setViewName("/board/update");
-//		return mv;
-//	}
+/*
 	@RequestMapping("/UpdateForm")
-	public ModelAndView updateForm(int bno, String menu_id) {
+	public ModelAndView updateForm(BoardVo boardVo) {
+		List<MenuVo> menuList = menuMapper.getMenuList();
+		
+		BoardVo vo = boardMapper.getView(boardVo);
 		ModelAndView mv = new ModelAndView();
-		BoardVo vo = boardMapper.getBoard(bno);
-		mv.addObject("vo",vo);
+		mv.addObject("bo",vo);
+		mv.addObject("menuList",menuList);
 		mv.setViewName("/board/update");
+		return mv;
+	}*/
+	@RequestMapping("/UpdateForm")
+	public ModelAndView updateForm(BoardVo boardVo) {
+		BoardVo vo = boardMapper.getBoard(boardVo);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("bo",vo);
+		mv.setViewName("board/update");
 		return mv;
 	}
 	

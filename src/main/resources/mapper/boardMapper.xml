@@ -22,7 +22,7 @@
 	<result property="hit"       column="hit"/>
 	</resultMap> -->
   
-  <select id="getView" resultType = "com.board.domain.BoardVo">
+  <select id="getBoard" resultType = "com.board.domain.BoardVo">
   SELECT BNO
   		 ,MENU_ID
          ,TITLE
@@ -63,9 +63,8 @@
   
   <update id="getUpdate">
   UPDATE BOARD
-  SET    MENU_ID = #{menu_id},
+  SET    
   		 TITLE   = #{title},
-  		 WRITER  = #{writer},
   		 CONTENT = #{content}
   WHERE  BNO     = #{bno}		 
          
