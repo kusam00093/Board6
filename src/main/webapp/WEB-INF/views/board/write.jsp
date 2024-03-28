@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="/img/favicon.png">
+<script src="https://cdn.jsdelivr.net/npm/browser-scss@1.0.3/dist/browser-scss.min.js"></script>
 <link rel="stylesheet" href="/css/common.css">
 <title>Write</title>
 <style>
@@ -31,6 +32,9 @@ td{
 #maintable td{
 	padding : 10px;
 }
+#maintable{
+	width : 80%;
+}
 td:nth-of-type(1){
 	width : 200px;
 	text-align : center;
@@ -55,7 +59,7 @@ textarea{
     <h2>게시글 등록</h2>
     <form action="/Board/Write" method = "post">
     <input type="hidden" name ="menu_id" value="${ menu_id }"/>
-      <table>
+      <table id = "maintable">
       	<tr>
       	  <td>제목</td>
       	  <td><input type="text" name ="title"></td>

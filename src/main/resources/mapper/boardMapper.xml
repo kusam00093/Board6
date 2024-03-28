@@ -74,7 +74,8 @@
   </update>
   
   <delete id="deleteBoard">
-  DELETE BOARD
+  DELETE
+  FROM   BOARD
   WHERE  BNO = #{bno}
   </delete>
   

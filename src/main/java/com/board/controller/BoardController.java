@@ -128,13 +128,21 @@ public class BoardController {
 	}
 	
 
+//	@RequestMapping("/UpdateForm")
+//	public ModelAndView updateForm(BoardVo boardVo) {
+//		List<MenuVo> menuList = menuMapper.getMenuList();
+//		BoardVo vo = boardMapper.getView(boardVo);
+//		ModelAndView mv = new ModelAndView();
+//		mv.addObject("bo",vo);
+//		mv.addObject("menuList",menuList);
+//		mv.setViewName("/board/update");
+//		return mv;
+//	}
 	@RequestMapping("/UpdateForm")
-	public ModelAndView updateForm(BoardVo boardVo) {
-		List<MenuVo> menuList = menuMapper.getMenuList();
-		BoardVo vo = boardMapper.getView(boardVo);
+	public ModelAndView updateForm(int bno, String menu_id) {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("bo",vo);
-		mv.addObject("menuList",menuList);
+		BoardVo vo = boardMapper.getBoard(bno);
+		mv.addObject("vo",vo);
 		mv.setViewName("/board/update");
 		return mv;
 	}
@@ -150,10 +158,13 @@ public class BoardController {
 	
 	@RequestMapping("/Delete")
 	public ModelAndView delete(BoardVo boardVo) {
-		//boardMapper.deleteBoard(boardVo);
+		// 게시글 삭제
+		boardMapper.deleteBoard(boardVo);
+		
+		// 다시 조회
 		ModelAndView mv = new ModelAndView();
+		
 		String menu_id = boardVo.getMenu_id();
-		System.out.println(menu_id);
 		mv.setViewName("redirect:/Board/List?menu_id=" + menu_id);
 		return mv;
 	}

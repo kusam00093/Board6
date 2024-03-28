@@ -113,7 +113,7 @@ public class MenuController {
 	@RequestMapping("/UpdateForm")
 	public String updateForm(MenuVo menuVo, Model model) {
 		
-		System.out.println("menuVo:"+menuVo);
+		//System.out.println("menuVo:"+menuVo);
 		String menu_id = menuVo.getMenu_id();
 		//수정할 데이터를 menu_id로 조회
 		MenuVo menu = menuMapper.getMenu(menu_id);
