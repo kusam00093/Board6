@@ -30,11 +30,12 @@ public class LoginCheckInterceptor implements HandlerInterceptor{
 		}
 		
 		//===================================================
-		if(obj==null) {
+		// 로그인 체크기능을 중지하려면 이부분을 주석으로 표시
+		/*if(obj==null) {
 			// 로그인 되어있지 않으면 /LoginForm으로 이동
 			response.sendRedirect("/LoginForm");
 			return false;			
-		}
+		}*/     
 		
 		
 		
